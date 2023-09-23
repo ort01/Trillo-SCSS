@@ -361,6 +361,7 @@
     margin-bottom: 3rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
 
     &__text {
         position: relative;
@@ -412,5 +413,66 @@
         font-family: sans-serif;
         color: var(--color-grey-light-2);
         z-index: 1;
+    }
+}
+
+//////////////// CTA/////////////
+.cta {
+    background-color: var(--color-white);
+    padding: 3.5rem 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__book-now {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+    }
+
+    &__btn {
+        border: none;
+        font-family: inherit;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+        color: var(--color-white);
+        border-radius: 100px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+
+        & > * {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        &--visible {
+            padding: 2rem 7.5rem;
+        }
+
+        &--hidden {
+            position: absolute;
+            padding: 2rem 0;
+            left: 0;
+            top: -100%;
+        }
+
+        &:hover {
+            background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+        }
+
+        &:hover &--visible {
+            transform: translateY(100%);
+        }
+
+        &:hover &--hidden {
+            top: 0;
+        }
     }
 }
